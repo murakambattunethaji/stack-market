@@ -32,7 +32,7 @@ function FrequencyTable() {
         className="border-b border-gray-600 hover:bg-gray-700"
       >
         <td className="p-3">
-          <button className="bg-blue-500 text-white px-5 py-2 rounded-md text-sm hover:bg-blue-400">
+          <button className="bg-cyan-600 text-white px-5 py-2 rounded-md text-sm hover:bg-cyan-700">
             Recommend
           </button>
         </td>
