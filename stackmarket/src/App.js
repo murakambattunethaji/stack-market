@@ -20,7 +20,8 @@ function App() {
         {/* <RecommendationChart /> */}
         {/* <FrequencyTable /> */}
         {/* <TrackedFrequency /> */}
-        <Dashboard/>
+        
+        {/* <Dashboard/> */}
       </div>
     </div>
   );
