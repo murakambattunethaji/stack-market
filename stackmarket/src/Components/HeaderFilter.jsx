@@ -24,7 +24,7 @@ const HeaderFilter = () => {
         gap: "10px",
       }}
     >
-      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", alignItems: "flex-start" }}>
+      <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", alignItems: "flex-start"  }}>
         {filters.map((filter, index) => (
           <div
             key={index}
@@ -52,6 +52,8 @@ const HeaderFilter = () => {
                 color: "#fff",
                 fontSize: "14px",
                 width: "100%",
+                height:"34px",
+
               }}
             >
               {filter.options.map((option, i) => (
@@ -86,11 +88,13 @@ const HeaderFilter = () => {
               borderRadius: "4px",
               backgroundColor: "#212121",
               color: "#fff",
-              border: "1px solid #64B5F6",
+              border: "1px solid ",
               whiteSpace: "nowrap",
+              width: "120px",
+              height:"33px",
             }}
           >
-            ESP <span style={{ cursor: "pointer", marginLeft: "8px", color: "#64B5F6" }}>×</span>
+            ESP <span style={{ cursor: "pointer", marginLeft: "60px",  }}>×</span>
           </div>
         </div>
       </div>
@@ -104,6 +108,9 @@ const HeaderFilter = () => {
             cursor: "pointer",
             fontSize: "14px",
             padding: "0",
+            marginRight: "19px",
+            marginTop:"20px",
+
           }}
         >
           Clear filters
@@ -115,17 +122,24 @@ const HeaderFilter = () => {
             border: "1px solid #64B5F6",
             borderRadius: "4px",
             overflow: "hidden",
+            fontSize: "12px",
+            width:"170px",
+            marginTop:"21px",
+            height:"35px",
+
+
           }}
         >
           <button
             style={{
               padding: "0.5rem 1rem",
-              backgroundColor: "#64B5F6",
+              // backgroundColor: "#64B5F6",
               color: "#fff",
               border: "none",
               cursor: "pointer",
-              fontWeight: "bold",
+              // fontWeight: "bold",
               flex: 1,
+
             }}
           >
             My wells
@@ -138,6 +152,7 @@ const HeaderFilter = () => {
               border: "none",
               cursor: "pointer",
               flex: 1,
+
             }}
           >
             All wells
