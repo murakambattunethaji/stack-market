@@ -39,28 +39,33 @@ const Controlroom = () => {
       <header className="flex justify-between items-center border-b border-gray-700 pb-4 mb-6">
         <div className="flex items-center space-x-6">
           <h1 className="text-2xl font-semibold">Control Room</h1>
-          <nav className="flex space-x-6">
-            <a href="#" className="text-gray-300 hover:text-white">
-              Wells
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white">
-              Tickets
-            </a>
-            <a href="#" className="text-gray-300 hover:text-white">
-              Tasks
-            </a>
-          </nav>
+
         </div>
         <div className="text-sm text-gray-400">
           Last updated on October 25, 2023 at 2:31 PM
         </div>
+
+
       </header>
 
       {/* Well Watchlists Section */}
       <section className="mb-8">
+
+        <nav className="flex space-x-6 mb-5">
+          <a href="#" className="text-gray-300 hover:text-blue-500 underline decoration-red-500">
+            Wells
+          </a>
+          <a href="#" className="text-gray-300 hover:text-blue-500">
+            Tickets
+          </a>
+          <a href="#" className="text-gray-300 hover:text-blue-500">
+            Tasks
+          </a>
+        </nav>
+
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">Well Watchlists</h2>
-          <button className="bg-blue-600 px-4 py-2 rounded text-sm font-medium hover:bg-blue-700">
+          <button className="bg-cyan-700 px-4 py-2 rounded text-sm font-medium hover:bg-blue-700">
             + Build watchlist
           </button>
         </div>
@@ -69,9 +74,8 @@ const Controlroom = () => {
             (watchlist, index) => (
               <div
                 key={index}
-                className={`p-4 rounded-lg border border hover:border-blue-500 ${
-                  index === 1 ? "bg-gray-800 border hover:border-blue-500 " : "bg-gray-800"
-                }`}
+                className={`p-4 rounded-lg border border hover:border-blue-500 ${index === 1 ? "bg-gray-800 border hover:border-blue-500 " : "bg-gray-800"
+                  }`}
               >
                 <h3 className="text-sm text-gray-400">{watchlist}</h3>
                 <p className="text-xl font-bold mt-2">{index === 0 ? 34 : 10}</p>
@@ -133,7 +137,7 @@ const Controlroom = () => {
                     </div>
                   </td>
 
-                  
+
                   <td className="py-3 px-4">
                     <ResponsiveContainer width={100} height={40}>
                       <LineChart data={productionData[well.graphIndex]}>
@@ -177,7 +181,7 @@ const Controlroom = () => {
                     </div>
                   </td>
 
-                  
+
                   <td className="py-3 px-4">
                     <ResponsiveContainer width={100} height={40}>
                       <LineChart data={productionData[well.graphIndex]}>
