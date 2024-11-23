@@ -11,7 +11,7 @@ import Dashboard from "./Components/Controlroom";
 function App() {
   return (
     <div className="flex h-screen bg-gray-900">
-      {/* <SideBar /> */}
+      <SideBar />
 
       {/* Main Content Section */}
       <div className="w-[95%] h-screen overflow-y-auto">
@@ -21,7 +21,7 @@ function App() {
         {/* <FrequencyTable /> */}
         {/* <TrackedFrequency /> */}
         
-        {/* <Dashboard/> */}
+        <Dashboard/>
       </div>
     </div>
   );

@@ -1,100 +1,205 @@
 import React from "react";
+import { LineChart, Line, ResponsiveContainer } from "recharts";
 
-const Dashboard = () => {
-  const wellsData = [
-    { name: "GLACIER ROCK 15", operator: "Roxxon", uptime: "30%", change: "-20%" },
-    { name: "WENDIGO EAST D 706WA", operator: "Roxxon", uptime: "40%", change: "-10%" },
-    { name: "CREED HA 7 703JM", operator: "Roxxon", uptime: "35%", change: "-15%" },
-    { name: "BLOCK HA 7 704LS", operator: "Roxxon", uptime: "50%", change: "-25%" },
-    { name: "SMYRNA WEST D 3404WB", operator: "Hammer", uptime: "40%", change: "-30%" },
-    { name: "HAMILTON COTT (A) 1LB", operator: "A.I.M", uptime: "50%", change: "-35%" },
-    { name: "GRIDIRON N004WA", operator: "A.I.M", uptime: "55%", change: "-40%" },
-    { name: "GUARDIAN 250 E 5WA", operator: "Roxxon", uptime: "30%", change: "-40%" },
+const Controlroom = () => {
+  // Sample data for production trends
+  const productionData = [
+    [
+      { name: "Day 1", value: 100 },
+      { name: "Day 2", value: 90 },
+      { name: "Day 3", value: 80 },
+      { name: "Day 4", value: 70 },
+      { name: "Day 5", value: 50 },
+    ],
+    [
+      { name: "Day 1", value: 100 },
+      { name: "Day 2", value: 95 },
+      { name: "Day 3", value: 85 },
+      { name: "Day 4", value: 80 },
+      { name: "Day 5", value: 75 },
+    ],
+    [
+      { name: "Day 1", value: 100 },
+      { name: "Day 2", value: 85 },
+      { name: "Day 3", value: 70 },
+      { name: "Day 4", value: 60 },
+      { name: "Day 5", value: 40 },
+    ],
+  ];
+
+  const wells = [
+    { name: "GLACIER ROCK 15", operator: "Roxxon", uptime: "30%", change: "-20%", graphIndex: 0 },
+    { name: "WENDIGO EAST D 706WA", operator: "Roxxon", uptime: "40%", change: "-10%", graphIndex: 1 },
+    { name: "CREED HA 7 703JM", operator: "Roxxon", uptime: "35%", change: "-15%", graphIndex: 2 },
   ];
 
   return (
     <div className="bg-gray-900 text-white min-h-screen p-6">
-      {/* Header */}
-      <header className="flex justify-between items-center pb-6">
-        <h1 className="text-2xl font-bold">Control Room</h1>
-        <p>Last updated on October 25, 2023 at 2:31 PM</p>
+      {/* Header Section */}
+      <header className="flex justify-between items-center border-b border-gray-700 pb-4 mb-6">
+        <div className="flex items-center space-x-6">
+          <h1 className="text-2xl font-semibold">Control Room</h1>
+          <nav className="flex space-x-6">
+            <a href="#" className="text-gray-300 hover:text-white">
+              Wells
+            </a>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Tickets
+            </a>
+            <a href="#" className="text-gray-300 hover:text-white">
+              Tasks
+            </a>
+          </nav>
+        </div>
+        <div className="text-sm text-gray-400">
+          Last updated on October 25, 2023 at 2:31 PM
+        </div>
       </header>
 
-      {/* Tabs */}
-      <nav className="flex space-x-6 text-sm mb-8">
-        <button className="text-blue-400 border-b-2 border-blue-400">Wells</button>
-        <button className="text-gray-500 hover:text-blue-400">Tickets</button>
-        <button className="text-gray-500 hover:text-blue-400">Tasks</button>
-      </nav>
+      {/* Well Watchlists Section */}
+      <section className="mb-8">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold">Well Watchlists</h2>
+          <button className="bg-blue-600 px-4 py-2 rounded text-sm font-medium hover:bg-blue-700">
+            + Build watchlist
+          </button>
+        </div>
+        <div className="grid grid-cols-4 gap-4">
+          {["All wells", "Shutdown wells", "Low performing wells", "Personal well watchlist"].map(
+            (watchlist, index) => (
+              <div
+                key={index}
+                className={`p-4 rounded-lg border border hover:border-blue-500 ${
+                  index === 1 ? "bg-gray-800 border hover:border-blue-500 " : "bg-gray-800"
+                }`}
+              >
+                <h3 className="text-sm text-gray-400">{watchlist}</h3>
+                <p className="text-xl font-bold mt-2">{index === 0 ? 34 : 10}</p>
+                <p className="text-sm text-gray-500">
+                  {index === 0
+                    ? "All active wells in region A"
+                    : "Details based on monitoring"}
+                </p>
+              </div>
+            )
+          )}
+        </div>
+      </section>
 
-      {/* Watchlists */}
-      <div className="grid grid-cols-4 gap-4 mb-8">
-        <div className="bg-gray-800 p-4 rounded shadow">
-          <h3 className="text-sm text-gray-400">All wells</h3>
-          <p className="text-sm text-gray-500">All active wells in region A</p>
-          <p className="text-4xl font-bold">34</p>
-        </div>
-        <div className="bg-gray-800 p-4 rounded shadow border border-cyan-500">
-          <h3 className="text-sm text-gray-400">Shutdown wells</h3>
-          <p className="text-sm text-gray-500">All wells with a shutdown status or a health score of 0</p>
-          <p className="text-4xl font-bold">8</p>
-        </div>
-        <div className="bg-gray-800 p-4 rounded shadow">
-          <h3 className="text-sm text-gray-400">Low performing wells</h3>
-          <p className="text-sm text-gray-500">All wells with a health score below 70</p>
-          <p className="text-4xl font-bold">10</p>
-        </div>
-        <div className="bg-gray-800 p-4 rounded shadow">
-          <h3 className="text-sm text-gray-400">Personal well watchlist</h3>
-          <p className="text-sm text-gray-500">Wells I'm currently monitoring for optimization</p>
-          <p className="text-4xl font-bold">10</p>
-        </div>
-      </div>
-
-      {/* Shutdown Wells Table */}
-      <div className="bg-gray-800 p-6 rounded shadow">
-        <h3 className="text-lg font-bold mb-4">Shutdown wells</h3>
-        <div className="flex items-center mb-4">
+      {/* Shutdown Wells Section */}
+      <section>
+        <h2 className="text-xl font-semibold mb-4">Shutdown wells</h2>
+        <div className="flex justify-between items-center mb-4">
           <input
             type="text"
-            className="bg-gray-700 text-sm text-white placeholder-gray-400 py-2 px-4 rounded w-full"
             placeholder="Search by well name or operator"
+            className="bg-gray-800 p-3 rounded-lg w-2/3 text-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
           />
-          <button className="ml-4 bg-gray-700 text-sm py-2 px-4 rounded hover:bg-gray-600">
+          <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
             Filter
           </button>
         </div>
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-gray-700">
-              <th className="text-left pb-2">Health Score</th>
-              <th className="text-left pb-2">Well name</th>
-              <th className="text-left pb-2">Operator</th>
-              <th className="text-left pb-2">Uptime</th>
-              <th className="text-left pb-2">7 day change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {wellsData.map((well, index) => (
-              <tr key={index} className="border-b border-gray-700">
-                <td className="py-2">
-                  <div className="flex items-center">
-                    <div className="w-6 h-6 flex items-center justify-center bg-red-500 text-white rounded-full text-xs">
-                      0
-                    </div>
-                  </div>
-                </td>
-                <td className="py-2 text-blue-400">{well.name}</td>
-                <td className="py-2">{well.operator}</td>
-                <td className="py-2">{well.uptime}</td>
-                <td className="py-2 text-red-500">{well.change}</td>
+        <div className="bg-gray-800 rounded-lg overflow-auto">
+          <table className="w-full text-sm text-gray-300">
+            <thead>
+              <tr className="border-b border-gray-700 text-left">
+                <th className="py-3 px-4">Health Score</th>
+                <th className="py-3 px-4">Well Name</th>
+                <th className="py-3 px-4">Operator</th>
+                <th className="py-3 px-4">Uptime</th>
+                <th className="py-3 px-4">Production</th>
+                <th className="py-3 px-4">7-day Change</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+
+            <tbody>
+              {wells.map((well, index) => (
+                <tr
+                  key={index}
+                  className="border-b border-gray-700 hover:bg-gray-700"
+                >
+                  <td className="py-3 px-4">0</td>
+                  <td className="py-3 px-4">{well.name}</td>
+                  <td className="py-3 px-4">{well.operator}</td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center space-x-2">
+                      <span>{well.uptime}</span>
+                      <div className="w-full bg-gray-600 h-2 rounded">
+                        <div
+                          className="bg-red-500 h-2"
+                          style={{ width: well.uptime }}
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  
+                  <td className="py-3 px-4">
+                    <ResponsiveContainer width={100} height={40}>
+                      <LineChart data={productionData[well.graphIndex]}>
+                        <Line
+                          type="monotone"
+                          dataKey="value"
+                          stroke="#8884d8"
+                          strokeWidth={2}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </td>
+                  <td className="py-3 px-4 text-red-500">{well.change}</td>
+                </tr>
+              ))}
+            </tbody>
+
+
+
+
+
+
+            <tbody>
+              {wells.map((well, index) => (
+                <tr
+                  key={index}
+                  className="border-b border-gray-700 hover:bg-gray-700"
+                >
+                  <td className="py-3 px-4">0</td>
+                  <td className="py-3 px-4">{well.name}</td>
+                  <td className="py-3 px-4">{well.operator}</td>
+                  <td className="py-3 px-4">
+                    <div className="flex items-center space-x-2">
+                      <span>{well.uptime}</span>
+                      <div className="w-full bg-gray-600 h-2 rounded">
+                        <div
+                          className="bg-red-500 h-2"
+                          style={{ width: well.uptime }}
+                        ></div>
+                      </div>
+                    </div>
+                  </td>
+
+                  
+                  <td className="py-3 px-4">
+                    <ResponsiveContainer width={100} height={40}>
+                      <LineChart data={productionData[well.graphIndex]}>
+                        <Line
+                          type="monotone"
+                          dataKey="value"
+                          stroke="#8884d8"
+                          strokeWidth={2}
+                        />
+                      </LineChart>
+                    </ResponsiveContainer>
+                  </td>
+                  <td className="py-3 px-4 text-red-500">{well.change}</td>
+                </tr>
+              ))}
+            </tbody>
+
+          </table>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default Dashboard;
+export default Controlroom;
