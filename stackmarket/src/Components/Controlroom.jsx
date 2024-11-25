@@ -1,5 +1,7 @@
 import React from "react";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
+import { FiSearch , FiFilter , } from "react-icons/fi";
+
 
 const Controlroom = () => {
   // Sample data for production trends
@@ -92,17 +94,27 @@ const Controlroom = () => {
 
       {/* Shutdown Wells Section */}
       <section>
-        <h2 className="text-xl font-semibold mb-4">Shutdown wells</h2>
-        <div className="flex justify-between items-center mb-4">
-          <input
-            type="text"
-            placeholder="Search by well name or operator"
-            className="bg-gray-800 p-3 rounded-lg w-2/3 text-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-          />
-          <button className="bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-600">
-            Filter
-          </button>
+        <div className="flex justify-between">
+          <h2 className="text-xl font-semibold mb-4  items-center w-1/2">Shutdown wells</h2>
+
+          <div className="flex items-center w-1/3 bg-black border border-gray-600 rounded-md px-3 py-2 h-9 ml-80 ">
+            <FiSearch className="text-gray-400 mr-2 ml-2" />
+            <input
+              type="text"
+              placeholder="Search by well name  or operator"
+              className="w-full text-sm text-gray-300 bg-black focus:outline-none  "
+
+            />
+          </div>
+
+          <div className=" mb-4 ml-6 flex items-center justify-center text-gray-300">
+            <button className="border border-gray-600 rounded-md hover:bg-gray-600  w-24 h-9 flex items-center justify-center">
+            <FiFilter className="mr-2"/> Filter
+            </button>
+          </div>
+
         </div>
+
         <div className="bg-gray-800 rounded-lg overflow-auto">
           <table className="w-full text-sm text-gray-300">
             <thead>
