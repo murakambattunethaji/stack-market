@@ -1,6 +1,10 @@
 import React from "react";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
-import { FiSearch , FiFilter , } from "react-icons/fi";
+import { FiSearch, FiFilter } from "react-icons/fi";
+import { AiFillStar } from "react-icons/ai";
+import { BiDotsVertical } from "react-icons/bi";
+
+
 
 
 const Controlroom = () => {
@@ -71,29 +75,40 @@ const Controlroom = () => {
             + Build watchlist
           </button>
         </div>
-        <div className="grid grid-cols-4 gap-4">
-          {["All wells", "Shutdown wells", "Low performing wells", "Personal well watchlist"].map(
-            (watchlist, index) => (
-              <div
-                key={index}
-                className={`p-4 rounded-lg border border hover:border-blue-500 ${index === 1 ? "bg-gray-800 border hover:border-blue-500 " : "bg-gray-800"
-                  }`}
-              >
-                <h3 className="text-sm text-gray-400">{watchlist}</h3>
-                <p className="text-xl font-bold mt-2">{index === 0 ? 34 : 10}</p>
-                <p className="text-sm text-gray-500">
-                  {index === 0
-                    ? "All active wells in region A"
-                    : "Details based on monitoring"}
-                </p>
-              </div>
-            )
-          )}
-        </div>
-      </section>
 
-      {/* Shutdown Wells Section */}
-      <section>
+
+        <div className="grid grid-cols-4 gap-4">
+
+          <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800  grid grid-cols-2 ">
+          <h4 >All Wells</h4>
+          <BiDotsVertical className="w-6 h-4 ml-16" />
+
+          <h6>All Active Wells in regine A</h6>
+        </div>
+
+        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
+          <h4>Shutdown Wells</h4>
+          <h6>hi</h6>
+          <BiDotsVertical className="w-6 h-4 " />
+        </div>
+
+        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
+          <h4>Low Performing Wells</h4>
+          <h6></h6>
+          <BiDotsVertical className="w-6 h-4 " />
+        </div>
+
+        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
+          <h4>Personal Well Watch List</h4>
+          <h6></h6>
+          <BiDotsVertical className="w-6 h-4 " />
+        </div>
+
+    </div>
+      </section >
+
+  {/* Shutdown Wells Section */ }
+  < section >
         <div className="flex justify-between">
           <h2 className="text-xl font-semibold mb-4  items-center w-1/2">Shutdown wells</h2>
 
@@ -109,7 +124,7 @@ const Controlroom = () => {
 
           <div className=" mb-4 ml-6 flex items-center justify-center text-gray-300">
             <button className="border border-gray-600 rounded-md hover:bg-gray-600  w-24 h-9 flex items-center justify-center">
-            <FiFilter className="mr-2"/> Filter
+              <FiFilter className="mr-2" /> Filter
             </button>
           </div>
 
@@ -119,23 +134,27 @@ const Controlroom = () => {
           <table className="w-full text-sm text-gray-300">
             <thead>
               <tr className="border-b border-gray-700 text-left">
+                <th></th>
                 <th className="py-3 px-4">Health Score</th>
                 <th className="py-3 px-4">Well Name</th>
                 <th className="py-3 px-4">Operator</th>
                 <th className="py-3 px-4">Uptime</th>
                 <th className="py-3 px-4">Production</th>
                 <th className="py-3 px-4">7-day Change</th>
+                <th></th>
               </tr>
             </thead>
 
             <tbody>
+
               {wells.map((well, index) => (
                 <tr
                   key={index}
                   className="border-b border-gray-700 hover:bg-gray-700"
                 >
-                  <td className="py-3 px-4">0</td>
-                  <td className="py-3 px-4">{well.name}</td>
+                  <AiFillStar className="mt-6 ml-6 w-5 h-5" />
+                  <td className="py-3 px-4"><button className="border-2 rounded-full border-red-500 w-8 h-8">0</button></td>
+                  <td className="py-3 px-4 text-blue-300 font-medium text-sm">{well.name}</td>
                   <td className="py-3 px-4">{well.operator}</td>
                   <td className="py-3 px-4">
                     <div className="flex items-center space-x-2">
@@ -163,6 +182,8 @@ const Controlroom = () => {
                     </ResponsiveContainer>
                   </td>
                   <td className="py-3 px-4 text-red-500">{well.change}</td>
+                  <BiDotsVertical className="w-8 h-6" />
+
                 </tr>
               ))}
             </tbody>
@@ -178,8 +199,10 @@ const Controlroom = () => {
                   key={index}
                   className="border-b border-gray-700 hover:bg-gray-700"
                 >
-                  <td className="py-3 px-4">0</td>
-                  <td className="py-3 px-4">{well.name}</td>
+                  <AiFillStar className="mt-6 ml-6 w-5 h-5" />
+
+                  <td className="py-3 px-4"><button className="border-2 rounded-full border-red-500 w-8 h-8">0</button></td>
+                  <td className="py-3 px-4 text-blue-300 font-medium text-sm">{well.name}</td>
                   <td className="py-3 px-4">{well.operator}</td>
                   <td className="py-3 px-4">
                     <div className="flex items-center space-x-2">
@@ -207,14 +230,17 @@ const Controlroom = () => {
                     </ResponsiveContainer>
                   </td>
                   <td className="py-3 px-4 text-red-500">{well.change}</td>
+                  <BiDotsVertical className="w-8 h-6" />
+
                 </tr>
+
               ))}
             </tbody>
 
           </table>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
