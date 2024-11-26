@@ -4,6 +4,8 @@ import { FiSearch, FiFilter } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import { BiDotsVertical } from "react-icons/bi";
 import { FaArrowUp } from 'react-icons/fa'
+import { FaArrowDown } from 'react-icons/fa'
+
 
 
 
@@ -188,7 +190,7 @@ const Controlroom = () => {
                       </LineChart>
                     </ResponsiveContainer>
                   </td>
-                  <td className="py-3 px-4 text-red-500">{well.change}</td>
+                  <td className="py-3 px-4 text-red-500"><button className="border  border-red-500 w-16 rounded h-6">{well.change}</button></td>
                   <BiDotsVertical className="w-8 h-6" />
 
                 </tr>
@@ -236,7 +238,7 @@ const Controlroom = () => {
                       </LineChart>
                     </ResponsiveContainer>
                   </td>
-                  <td className="py-3 px-4 text-red-500">{well.change}</td>
+                  <td className="py-3 px-4 text-red-500 "><button className="border  border-red-500 w-16 rounded h-6">{well.change}</button></td>
                   <BiDotsVertical className="w-8 h-6" />
 
                 </tr>
