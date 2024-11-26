@@ -3,6 +3,7 @@ import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { FiSearch, FiFilter } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import { BiDotsVertical } from "react-icons/bi";
+import { FaArrowUp } from 'react-icons/fa'
 
 
 
@@ -58,7 +59,7 @@ const Controlroom = () => {
       <section className="mb-8">
 
         <nav className="flex space-x-6 mb-5">
-          <a href="#" className="text-gray-300 hover:text-blue-500 underline decoration-red-500">
+          <a href="#" className="text-gray-300 hover:text-blue-500 underline  decoration-red-500">
             Wells
           </a>
           <a href="#" className="text-gray-300 hover:text-blue-500">
@@ -79,37 +80,41 @@ const Controlroom = () => {
 
         <div className="grid grid-cols-4 gap-4">
 
-          <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800  grid grid-cols-2 ">
-          <h4 >All Wells</h4>
-          <BiDotsVertical className="w-6 h-4 ml-16" />
+          <div className="p-4 rounded-lg border border-gray-700 bg-gray-800 border    
+              hover:border-blue-500 bg-gray-800  grid grid-cols-[70%_30%] justify-between   w-full ">
+            <h4 className="text-gray-300 ">All Wells</h4>
+            <BiDotsVertical className="w-6 h-4 ml-16 " />
+            <h6 className="text-gray-300 text-sm mt-2">All Active Wells in regine A</h6>
+            <h1 className=" ml-12 mt-10 text-4xl font-semibold"> 34</h1>
+          </div>
 
-          <h6>All Active Wells in regine A</h6>
+          <div className="p-4 rounded-lg border  border-gray-700 bg-gray-800 border hover:border-blue-500 bg-gray-800 grid grid-cols-[70%_30%]">
+            <h4 className="text-gray-300">Shutdown Wells</h4>
+            <BiDotsVertical className="w-6 h-4 ml-16" />
+            <h6 className="text-gray-300 text-sm mt-2">All wells with a shutdown status or a health score of 0</h6>
+            <h1 className="ml-16 mt-10 text-4xl font-semibold ">8</h1>
+          </div>
+
+          <div className="p-4 rounded-lg border  border border-gray-700  border hover:border-blue-500 bg-gray-800 grid grid-cols-[70%_30%]">
+            <h4 className="text-gray-300">Low Performing Wells</h4>
+            <BiDotsVertical className="w-6 h-4 ml-16" />
+            <h6 className="text-gray-300 text-sm mt-2">All wells with a health score below 70</h6>
+            <h1 className="ml-14 mt-10 text-4xl font-semibold">10</h1>
+          </div>
+
+          <div className="p-4 rounded-lg  border border-gray-700 bg-gray-800 border hover:border-blue-500 bg-gray-800 grid grid-cols-[70%_30%]">
+            <h4 className="text-gray-300">Personal Well Watch List</h4>
+            <BiDotsVertical className="w-6 h-4 ml-16" />
+            <h6 className="text-gray-300 text-sm mt-2">Wells i'm currently monitaring for optimization</h6>
+            <h1 className="ml-12 mt-10 text-4xl font-semibold">10</h1>
+          </div>
+
         </div>
-
-        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
-          <h4>Shutdown Wells</h4>
-          <h6>hi</h6>
-          <BiDotsVertical className="w-6 h-4 " />
-        </div>
-
-        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
-          <h4>Low Performing Wells</h4>
-          <h6></h6>
-          <BiDotsVertical className="w-6 h-4 " />
-        </div>
-
-        <div className="p-4 rounded-lg border border hover:border-blue-500 bg-gray-800 border hover:border-blue-500 bg-gray-800">
-          <h4>Personal Well Watch List</h4>
-          <h6></h6>
-          <BiDotsVertical className="w-6 h-4 " />
-        </div>
-
-    </div>
       </section >
 
-  {/* Shutdown Wells Section */ }
-  < section >
-        <div className="flex justify-between">
+      {/* Shutdown Wells Section */}
+      < section >
+        <div className="flex justify-between ">
           <h2 className="text-xl font-semibold mb-4  items-center w-1/2">Shutdown wells</h2>
 
           <div className="flex items-center w-1/3 bg-black border border-gray-600 rounded-md px-3 py-2 h-9 ml-80 ">
@@ -135,7 +140,9 @@ const Controlroom = () => {
             <thead>
               <tr className="border-b border-gray-700 text-left">
                 <th></th>
-                <th className="py-3 px-4">Health Score</th>
+                <th className="py-3 px-4 flex">Health Score
+                  <FaArrowUp className="ml-2 mt-1"/>
+                </th>
                 <th className="py-3 px-4">Well Name</th>
                 <th className="py-3 px-4">Operator</th>
                 <th className="py-3 px-4">Uptime</th>
