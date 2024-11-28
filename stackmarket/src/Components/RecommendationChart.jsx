@@ -7,7 +7,7 @@ import { FaSearch , FiSearch} from "react-icons/fi";
 ChartJS.register(Tooltip, Legend, LinearScale, PointElement);
 
 const RecommendationChart = () => {
-  // Chart data
+  
   const data = {
     datasets: [
       {
@@ -46,7 +46,7 @@ const RecommendationChart = () => {
     ],
   };
 
-  // Chart options
+  
   const options = {
     scales: {
       x: {

@@ -1,4 +1,6 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 import SideBar from "./Components/SideBar";
 import FrequencyTable from "./Components/FrequencyTable";
@@ -8,11 +10,12 @@ import RecommendationChart from "./Components/RecommendationChart";
 import TrackedFrequency from "./Components/TrackedFrequency";
 import Dashboard from "./Components/Controlroom";
 import LocationPage from "./Components/LocationPage";
-
+import Home from "./Components/Home"
 function App() {
   return (
     <div className="flex h-screen bg-gray-900">
-      {/* <SideBar /> */}
+
+      <SideBar />
 
       {/* Main Content Section */}
       <div className="w-[95%] h-screen overflow-y-auto">
@@ -21,9 +24,23 @@ function App() {
         {/* <RecommendationChart /> */}
         {/* <FrequencyTable /> */}
         {/* <TrackedFrequency /> */}
-        
+
         {/* <Dashboard/> */}
-        <LocationPage/>
+
+        {/* <LocationPage /> */}
+
+
+
+
+
+
+
+
+        <Routes>
+          <Route path="Home" element={<Home />} />
+
+          <Route path="LocationPage" element={<LocationPage />} />
+        </Routes>
       </div>
     </div>
   );

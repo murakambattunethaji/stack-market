@@ -24,7 +24,6 @@ function FrequencyTable() {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Function to render rows for the current page
   const renderRows = () => {
     return allData[currentPage - 1].map((row) => (
       <tr
@@ -59,7 +58,6 @@ function FrequencyTable() {
     ));
   };
 
-  // Function to handle page navigation
   const handlePageChange = (pageNumber) => {
     if (pageNumber > 0 && pageNumber <= 10) {
       setCurrentPage(pageNumber);

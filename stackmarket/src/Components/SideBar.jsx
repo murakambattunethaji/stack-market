@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import {
   FaHome,
   FaProjectDiagram,
@@ -6,6 +8,7 @@ import {
   FaClock,
   FaCog,
   FaSignOutAlt,
+  FaLocationArrow,
 } from "react-icons/fa";
 
 const SideBar = () => {
@@ -19,7 +22,7 @@ const SideBar = () => {
         {/* Icons */}
         <div className="space-y-6 ">
           <button className="w-10 h-8 flex items-center justify-center bg-gray-700 rounded-md hover:bg-gray-600 ml-1 ">
-            <FaHome className="text-white text-xl " />
+          <Link to={'Home'}><FaHome className="text-white text-xl" /></Link>
           </button>
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600 ">
             <FaProjectDiagram className="text-white text-xl mt-0" />
@@ -27,9 +30,11 @@ const SideBar = () => {
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
             <FaBell className="text-white text-xl " />
           </button>
+
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
-            <FaClock className="text-white text-xl" />
+            <Link to={'LocationPage'}><FaLocationArrow className="text-white text-xl" /></Link>
           </button>
+
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
             <FaCog className="text-white text-xl" />
           </button>
