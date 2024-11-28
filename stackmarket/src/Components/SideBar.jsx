@@ -9,6 +9,7 @@ import {
   FaCog,
   FaSignOutAlt,
   FaLocationArrow,
+  FaTimes,
 } from "react-icons/fa";
 
 const SideBar = () => {
@@ -17,12 +18,11 @@ const SideBar = () => {
       {/* Top Section */}
       <div className="space-y-8">
         {/* Logo */}
-        <div className="text-orange-500 text-4xl font-bold ml-3">X</div>
-
+        <Link to={'John'}><div className="text-orange-500 text-4xl font-bold ml-3">X</div></Link>
         {/* Icons */}
         <div className="space-y-6 ">
           <button className="w-10 h-8 flex items-center justify-center bg-gray-700 rounded-md hover:bg-gray-600 ml-1 ">
-          <Link to={'Home'}><FaHome className="text-white text-xl" /></Link>
+            <Link to={'Home'}><FaHome className="text-white text-xl" /></Link>
           </button>
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600 ">
             <FaProjectDiagram className="text-white text-xl mt-0" />
@@ -31,13 +31,18 @@ const SideBar = () => {
             <FaBell className="text-white text-xl " />
           </button>
 
+
+
+          <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
+            <Link to={'Dashboard'}><FaCog className="text-white text-xl" /></Link>
+          </button>
+
+
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
             <Link to={'LocationPage'}><FaLocationArrow className="text-white text-xl" /></Link>
           </button>
 
-          <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600">
-            <FaCog className="text-white text-xl" />
-          </button>
+
         </div>
       </div>
 

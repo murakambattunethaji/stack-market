@@ -11,6 +11,7 @@ import TrackedFrequency from "./Components/TrackedFrequency";
 import Dashboard from "./Components/Controlroom";
 import LocationPage from "./Components/LocationPage";
 import Home from "./Components/Home"
+import John from "./Components/John";
 function App() {
   return (
     <div className="flex h-screen bg-gray-900">
@@ -38,7 +39,8 @@ function App() {
 
         <Routes>
           <Route path="Home" element={<Home />} />
-
+          <Route path="John" element={<John />} />
+          <Route path="Dashboard" element={< Dashboard/>} />
           <Route path="LocationPage" element={<LocationPage />} />
         </Routes>
       </div>
