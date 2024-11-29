@@ -30,7 +30,7 @@ function App() {
 
         {/* <LocationPage /> */}
 
-        <John />
+        {/* <John /> */}
 
 
 
@@ -38,12 +38,14 @@ function App() {
 
 
 
-        {/* <Routes>
+        <Routes>
           <Route path="Home" element={<Home />} />
           <Route path="John" element={<John />} />
           <Route path="Dashboard" element={< Dashboard/>} />
           <Route path="LocationPage" element={<LocationPage />} />
-        </Routes> */}
+        </Routes>
+
+        
       </div>
     </div>
   );
