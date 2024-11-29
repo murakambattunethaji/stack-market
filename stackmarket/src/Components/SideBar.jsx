@@ -21,9 +21,11 @@ const SideBar = () => {
         <Link to={'John'}><div className="text-orange-500 text-4xl font-bold ml-3">X</div></Link>
         {/* Icons */}
         <div className="space-y-6 ">
-          <button className="w-10 h-8 flex items-center justify-center bg-gray-700 rounded-md hover:bg-gray-600 ml-1 ">
+
+          <button className="w-10 h-8 flex items-center justify-center  rounded-md hover:bg-gray-600 ml-1 ">
             <Link to={'Home'}><FaHome className="text-white text-xl" /></Link>
           </button>
+          
           <button className="w-12 h-7 flex items-center justify-center hover:bg-gray-600 ">
             <FaProjectDiagram className="text-white text-xl mt-0" />
           </button>
