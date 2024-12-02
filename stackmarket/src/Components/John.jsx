@@ -32,18 +32,35 @@ const John = () => {
     <div className="bg-gray-900 text-white min-h-screen p-6">
       {/* Header */}
       <header className="flex justify-between items-center mb-6">
-        <div className="text-xl font-bold">Connexia</div>
+        <div className=" text-4xl">Conne<span className="text-orange-400">x</span>ia</div>
         <div className="flex items-center space-x-4">
-          <span className="text-sm">Hello, Jason</span>
-          <button className="bg-blue-500 px-4 py-2 rounded-md">My Insights</button>
-          <button className="bg-gray-700 px-4 py-2 rounded-md">My Apps</button>
+
           <div className="flex space-x-4">
-            <span>🔍</span>
-            <span>🔔</span>
-            <span>👤</span>
+            <span>🔍 Search</span>
+            <span>🔔Notification</span>
+            <span>👤 My Profile</span>
           </div>
         </div>
       </header>
+
+      <div className="p-6 grid grid-cols-6 mb-4">
+        <span className=" grid col-span-2 text-2xl">
+          <div className="flex">
+            <img
+              src="https://img.freepik.com/free-vector/young-prince-royal-attire_1308-176144.jpg?t=st=1733117070~exp=1733120670~hmac=19d53e3c0d4ca8dbfd52c20f66ea2833291cc19fdd1d227de083fdd558a9e8d9&w=740"
+              alt="User Profile"
+              className="w-10 h-10 rounded-full ml-1 flex"
+            />
+            <div className="ml-2 mt-1">Hello, Jason</div>
+          </div>
+          
+        </span>
+        <button className="bg-cyan-600 px-4 py-2 w-70 ml-">My Insights</button>
+        <button className="bg-gray-700 px-4 py-2 w-50">My Apps</button>
+        <button></button>
+        <button className="border border-gray-500 w-10 h-9 rounded text-xl ml-56 text-gray-300 mt-1 ">+</button>
+
+      </div>
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
