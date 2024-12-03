@@ -1,4 +1,7 @@
 import React from "react";
+import { FaExclamationTriangle, FaArrowRight } from 'react-icons/fa'
+import { BiDotsVertical } from "react-icons/bi";
+
 import {
   LineChart,
   Line,
@@ -53,7 +56,7 @@ const John = () => {
             />
             <div className="ml-2 mt-1">Hello, Jason</div>
           </div>
-          
+
         </span>
         <button className="bg-cyan-600 px-4 py-2 w-70 ml-">My Insights</button>
         <button className="bg-gray-700 px-4 py-2 w-50">My Apps</button>
@@ -63,28 +66,90 @@ const John = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-gray-300">
+
         {/* Change Point Detection Summary */}
-        <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold mb-4">Change point detection summary</h3>
-          <ul className="space-y-2">
-            <li className="flex justify-between">
-              <span>Gas interference</span>
-              <span className="text-red-500">4 potential well issue(s)</span>
+        <div className="bg-gray-800 p-10 rounded-lg shadow-md text-gray-300">
+          <div className="flex">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Change point detection summary</h3>
+            </div>
+            <div>
+              <BiDotsVertical className="ml-20 text-gray-300   w-6 h-8" />
+            </div>
+          </div>
+          <hr />
+
+          <ul className="space-y-2 ">
+
+            <li className=" p-2 flex p-6">
+
+              <div >
+                <FaExclamationTriangle className="text-red-500 mt-4 w-12 h-6" />
+              </div>
+              <div className="ml-6">
+                <p className="text-lg ">Gas interference</p>
+                <span className=""><span className="text-2xl font-bold">4</span> potential well issue(s)</span>
+              </div>
+              <div >
+                <FaArrowRight className="ml-28 mt-4" />
+              </div>
+
             </li>
-            <li className="flex justify-between">
-              <span>Possible hole in tubing</span>
-              <span className="text-red-500">3 potential well issue(s)</span>
+            <hr />
+
+            <li className=" p-2 flex p-6">
+
+              <div>
+                <FaExclamationTriangle className="text-red-500 mt-4 w-12 h-6" />
+              </div>
+              <div className="ml-6">
+                <p className="text-lg">Possible hole tubing</p>
+                <span className=""><span className="text-2xl font-bold">3</span> potential well issue(s)</span>
+              </div>
+              <div>
+                <FaArrowRight className="ml-28 mt-4" />
+              </div>
+
             </li>
-            <li className="flex justify-between">
-              <span>Worn out pump</span>
-              <span className="text-red-500">5 potential well issue(s)</span>
+
+            <hr />
+
+            <li className=" p-2 flex p-6">
+
+              <div>
+                <FaExclamationTriangle className="text-red-500 mt-4 w-12 h-6" />
+              </div>
+              <div className="ml-6">
+                <p className="text-lg">Worn out pump</p>
+                <span className=""><span className="text-2xl font-bold">5</span> potential well issue(s)</span>
+              </div>
+              <div >
+                <FaArrowRight className="ml-28 mt-4" />
+              </div>
+
             </li>
-            <li className="flex justify-between">
-              <span>Possible broken shaft</span>
-              <span className="text-green-500">0 potential well issue(s)</span>
+
+            <hr />
+
+            <li className=" p-2 flex p-6">
+
+              <div>
+                <FaExclamationTriangle className="text-red-500 mt-4 w-12 h-6" />
+              </div>
+              <div className="ml-6">
+                <p className="text-lg">Possible broken shaft</p>
+                <span className=""> <span className="text-2xl font-bold">0</span> potential well issue(s)</span>
+              </div>
+              <div>
+                <FaArrowRight className="ml-28 mt-4" />
+              </div>
+
             </li>
           </ul>
+
+          <hr />
+
           <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all</button>
         </div>
 
@@ -104,11 +169,30 @@ const John = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <div className="space-y-2">
-            <p>Speed change: <span className="text-green-500">20,859 Bopd Increase</span></p>
-            <p>Pump change: <span className="text-green-500">16,978 Bopd Increase</span></p>
+
+          <div className="space-y-2 ">
+            <div>
+              <p className="p-1">Speed change </p>
+              <span><span className="text-2xl font-bold p-1">20,859</span> Bopd Increase</span>
+              <p className="p-2">From 304 wells</p>
+            </div>
+            <hr />
+            <div >
+              <p className="p-1">Pump change</p>
+              <span><span className="text-2xl font-bold p-1">16,978</span> Bopd Increase</span>
+              <p className="p-2">From 427 wells</p>
+
+            </div>
+            <hr />
           </div>
-          <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
+          <div className="flex justify-between mt-4">
+            <div>
+              <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
+            </div>
+            <div>
+              <button className="mt-4 border border-gray-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
+            </div>
+          </div>
         </div>
 
         {/* Deferred Production */}
