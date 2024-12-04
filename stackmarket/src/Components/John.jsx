@@ -1,6 +1,8 @@
 import React from "react";
 import { FaExclamationTriangle, FaArrowRight } from 'react-icons/fa'
 import { BiDotsVertical } from "react-icons/bi";
+import { FaClock } from "react-icons/fa";
+
 
 import {
   LineChart,
@@ -150,12 +152,21 @@ const John = () => {
 
           <hr />
 
-          <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all</button>
+          <button className="mt-20 bg-blue-500 px-4 py-2 rounded-md w-full">View all</button>
         </div>
 
         {/* Production Optimization */}
         <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold mb-4">Production optimization</h3>
+
+          <div className="flex mb-4">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Production optimization</h3>
+            </div>
+            <div>
+              <BiDotsVertical className="ml-60 text-gray-300   w-6 h-8" />
+
+            </div>
+          </div>
           <div className="h-60 mb-4">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={productionData}>
@@ -187,22 +198,103 @@ const John = () => {
           </div>
           <div className="flex justify-between mt-4">
             <div>
-              <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
+              <button className="mt-16 bg-blue-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
             </div>
             <div>
-              <button className="mt-4 border border-gray-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
+              <button className="mt-16 border border-gray-500 px-4 py-2 rounded-md w-full">View all recommendations</button>
             </div>
           </div>
         </div>
 
         {/* Deferred Production */}
         <div className="bg-gray-800 p-4 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold mb-4">Deferred production</h3>
-          <p className="mb-4">Cumulative deferred production: <span className="text-red-500">18,297 bbl</span></p>
-          <ul className="space-y-2">
-            <li>GLACIER ROCK 15 - <span className="text-red-500">11,297 bbl</span></li>
-            <li>TITAN RIDGE 4 - <span className="text-red-500">6,200 bbl</span></li>
-            <li>HORIZON ECHO 7 - <span className="text-red-500">800 bbl</span></li>
+
+          <div className="flex">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Deferred production</h3>
+
+            </div>
+            <div>
+              <BiDotsVertical className="ml-60 text-gray-300   w-6 h-8" />
+
+            </div>
+          </div>
+          <hr />
+
+
+
+          <p className="mt-4">Cumulative deferred production</p>
+          <span className=""><span className="text-2xl font-bold">18,297</span> bbl</span>
+          <p className="mt-6 mb-2">Top Contributors</p>
+          <hr />
+          <ul className="space-y-2 ">
+            <li className="text-blue-300 font-semibold mt-6">GLACIER ROCK 15  </li>
+            <p>Deffered Production</p>
+
+            <div className="flex">
+              <div>
+                <div className="w-60 h-4 mt-2 bg-red-500 rounded-full"></div>
+              </div>
+              <div>
+                <p><span className="text-xl ml-4">11,297</span> bbl</p>
+              </div>
+            </div>
+
+            <div className="flex ">
+              <div className="mb-4 ">
+                <button className="border border-red-500 rounded text-red-500 h-7 w-24 ">Shutdown</button>
+              </div>
+
+              <div className="ml-12 ">
+                <FaClock className="mt-2" />
+              </div>
+            </div>
+            <hr />
+            <li className="text-blue-300 font-semibold ">TITAN RIDGE 4</li>
+            <p>Deffered Production </p>
+
+
+            <div className="flex">
+              <div>
+                <div className="w-40 h-4 mt-2 bg-red-500 rounded-full"></div>
+              </div>
+              <div>
+                <p><span className="text-xl ml-4">6,200</span> bbl</p>
+              </div>
+            </div>
+
+            <div className="flex ">
+              <div className="mb-4">
+                <button className="border border-red-500 rounded text-red-500 h-7 w-24 ">Shutdown</button>
+              </div>
+
+              <div className="ml-12 ">
+                <FaClock className="mt-2" />
+              </div>
+            </div>
+            <hr />
+            <li className="text-blue-300 font-semibold">HORIZON ECHO 7</li>
+            <p>Deffered Production </p>
+
+            <div className="flex">
+              <div>
+                <div className="w-8 h-4 mt-2 bg-red-500 rounded-full"></div>
+              </div>
+              <div>
+                <p><span className="text-xl ml-4">800</span> bbl</p>
+              </div>
+            </div>
+
+            <div className="flex ">
+              <div className="mb-4">
+                <button className="border border-red-500 rounded text-red-500 h-7 w-24 ">Shutdown</button>
+              </div>
+
+              <div className="ml-12 ">
+                <FaClock className="mt-2" />
+              </div>
+            </div>
+
           </ul>
           <button className="mt-4 bg-blue-500 px-4 py-2 rounded-md w-full">View all</button>
         </div>
