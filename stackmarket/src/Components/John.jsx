@@ -1,5 +1,5 @@
 import React from "react";
-import { FaExclamationTriangle, FaArrowRight } from 'react-icons/fa'
+import { FaExclamationTriangle, FaArrowRight, FaArrowUp } from 'react-icons/fa'
 import { BiDotsVertical } from "react-icons/bi";
 import { FaClock } from "react-icons/fa";
 
@@ -316,10 +316,34 @@ const John = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-          <ul className="space-y-2">
-            <li>Oil: <span className="text-green-500">43,500 bbl/day</span></li>
-            <li>Gas: <span className="text-green-500">3,000 mcf/day</span></li>
-            <li>CO2e: <span className="text-green-500">3,100 kg/day</span></li>
+          <ul className="space-y-2 flex ">
+            <div>
+              <button className="border border-gray-500 mt-2 rounded p-2 w-52  flex">
+                <h1 className="text-yellow-400">Oil - <span className="">43,500 bbl/day</span></h1>
+                <FaArrowUp className="ml-6 mt-1 text-white-400" />
+              </button>
+            </div>
+            <div>
+              <button className="border border-gray-500 rounded p-2 ml-52 w-52  flex">
+                <h1 className="text-green-400"> Gas - <span className="">3,000 mcf/day</span></h1>
+                <FaArrowUp className="ml-6 mt-1 text-white-400" />
+
+              </button>
+
+            </div>
+            <div>
+              <button className="border border-gray-500 rounded p-2 ml-52 w-52  flex">
+                <h1 className="text-red-400">CO2e - <span className="">3,100 kg/day</span></h1>
+                <FaArrowUp className="ml-6 mt-1 text-white-400" />
+
+              </button>
+
+            </div>
+
+            <h1 className="font-bold text-lg  ml-36 mt-2">Emission events</h1>
+
+            <BiDotsVertical className="ml-36  text-gray-300   w-6 h-8" />
+
           </ul>
         </div>
       </div>
